@@ -1,0 +1,8 @@
+Version 1.0, released May 30 2018:
+	-- OpenCL works, depend on openssl 1.0
+
+Version 0.1, released May 27 2018:
+	- fork from https://github.com/exploitagency/vanitygen-plus.git
+	- migrate to openssl 1.1
+	- OpenCL support still depend on openssl 1.0, not work yet
+	- Win32 to be migrated to TDG-GCC

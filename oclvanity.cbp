@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="oclvanity" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/oclvanity" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/oclvanity" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="OpenCL" />
+			<Add library="crypto" />
+			<Add library="dl" />
+			<Add library="pthread" />
+		</Linker>
+		<Unit filename="avl.h" />
+		<Unit filename="hex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="hex.h" />
+		<Unit filename="oclengine.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="oclengine.h" />
+		<Unit filename="oclvanitygen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pattern.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pattern.h" />
+		<Unit filename="sha3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sha3.h" />
+		<Unit filename="util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="util.h" />
+		<Extensions>
+			<code_completion />
+			<debugger>
+				<remote_debugging target="Debug">
+					<options conn_type="0" serial_baud="115200" additional_cmds="set args 6188" />
+				</remote_debugging>
+			</debugger>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,12 @@
+*.oclbin
+*.o
+*.depend
+*.layout
+*.oclbin
+*.dbg
+*.exe
+vanity
+oclvanity
+obj/
+bin/
+build/
