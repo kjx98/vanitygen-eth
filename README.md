@@ -1,12 +1,12 @@
------
-Vanitygen EOS!  
+dt-----
+Vanitygen ETH!  
 -----
   
-**Download the latest binary from: https://github.com/kjx98/vanitygen-EOS/releases !**  
+**Download the latest binary from: https://github.com/kjx98/vanitygen-eth/releases !**  
 
 Forked from exploitagency/vanitygen-plus ,  
 then modified by Jesse Kuang
-to support various EOS-Token,  
+to support ETH-Token and ERC20 Tokens,  
 and with the following changes:  
   
  + upgrade support for openssl 1.1+
@@ -23,7 +23,7 @@ If you have an altcoin you would like to add please let me know.
 -----
 Getting Started  
 -----  
-**Download the latest binary from: https://github.com/kjx98/vanitygen-EOS/releases !**  
+**Download the latest binary from: https://github.com/kjx98/vanitygen-eth/releases !**  
 Linux Binary (Compiled on 64bit Debian 18.04 Testing)
 Windows Binary (Compiled on Win10 64bit), not yet
   
@@ -31,52 +31,24 @@ Extract the files,
 open a terminal/command prompt,  
 change to directory containing vanitygen-EOS binaries.  
   
-Running On Linux: `./vanitygen -ARGS`, or , `./keyconv -ARGS`, etc  
-Running On Windows: `vanitygen.exe -ARGS`, `keyconv.exe -ARGS`, etc  
+Running On Linux: `./vanity -ARGS`, or , `./keyconv -ARGS`, etc  
+Running On Windows: `vanity.exe -ARGS`, `keyconv.exe -ARGS`, etc  
   
-**For generating addresses using the CPU(slower) use: vanitygen !**  
-**For generating addresses using the GPU(faster) use: oclvanitygen !**  
+**For generating addresses using the CPU(slower) use: vanity !**  
+**For generating addresses using the GPU(faster) use: oclvanity !**  
   
 **NOTES:**	All arguments are case sensitive!  
 	Address prefix must be at the end of the command.  
 	oclvanitygen requires OpenCL and correct drivers.  
   
 Example output of above command:  
->Generating EOS Address  
->Difficulty: 379272
->EOS Pattern: 518a                                                              
->EOS Address: EOS518aMZ4X4Z7gxdSVmygP8hTHz5VwwezMHiLWxHnLRxJT9jztrF
->EOS Privkey: 5KMMK9Eu1P5RnEdfF1UFMJUFWio7b1EEyjZyk9mGyNGnUixsAUs
+>Generating ETH Address  
+>Difficulty: 65536
+>Pattern: 518a                                                                  
+>Address: 0x518a7f9ae5bb72e34e8bcd25f6912199169ccfa0
+>Privkey: 0x17c71c86be6aef0db73b98357cba6679e598f882d46df79c1e53803a3b50e588
   
 -----
-Encrypting and Decrypting a vanitygen or oclvanitygen private key  
------  
-**Encrypting generated private key:**  
-Linux: `./vanitygen -E password  5a`  
-Windows: `./vanitygen -E password 5a`  
-*For GPU use "oclvanitygen" in place of "vanitygen"*  
-
- * `5a` Choose address prefix "Aa"  
- * `-E password` Encrypt key with password as "password",  
-**NOTE:** It is more secure to use option `-e` with no trailing password,  
-then vanitygen prompts for a password so theres no command history.  
-Also please choose a stronger password than "password".  
-  
->Generating EOS Address  
->Difficulty: 112
->EOS Pattern: 5a                                                                
->EOS Address: EOS5aJkYcB4FVtEKaQrpxGbyJss1dXWfdboAXTRNutc3MsnPa6RFf
->EOS Protkey: PsWohuHuhj5FV3Z1uz9vJgapV86XtNQSJyZYrSSF4VxrX2wkWrSQysJ5rHgkapMWxx6f
-  
-**Decrypting generated ProtKey with Keyconv:**  
-Linux: `./keyconv -d yTYFUWAsgFmMxCbKtu3RdrrJXosZrjxiQFA2o43neB4jPpfLe5owNNrteTs8mpvua8Ge`  
-Windows: `keyconv.exe -d yTYFUWAsgFmMxCbKtu3RdrrJXosZrjxiQFA2o43neB4jPpfLe5owNNrteTs8mpvua8Ge`  
-  
- * `-d` means decrypt the protected key of "yTYFUWAsgFmMxCbKtu3RdrrJXosZrjxiQFA2o43neB4jPpfLe5owNNrteTs8mpvua8Ge"  
-
->Enter import password:  --- Enter "password" or whatever you specified as password and press enter  
->Address: EOS5aJkYcB4FVtEKaQrpxGbyJss1dXWfdboAXTRNutc3MsnPa6RFf
->Privkey: 5Jg5iMo64KDzyaRkJ3tLZVMbch7NTh8CG89qJveaAMFYrxBfqgh
   
 **If you found this repo useful, please consider a donation.  Thank You!**  
   
