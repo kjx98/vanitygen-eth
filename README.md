@@ -1,4 +1,4 @@
-dt-----
+-----
 Vanitygen ETH!  
 -----
   
@@ -25,14 +25,14 @@ Getting Started
 -----  
 **Download the latest binary from: https://github.com/kjx98/vanitygen-eth/releases !**  
 Linux Binary (Compiled on 64bit Debian 18.04 Testing)
-Windows Binary (Compiled on Win10 64bit), not yet
+Windows Binary (Compiled on Win10 64bit),  32 bits and OpenCL binary not yet
   
 Extract the files, 
 open a terminal/command prompt,  
-change to directory containing vanitygen-EOS binaries.  
+change to directory containing vanitygen-eth binaries.  
   
-Running On Linux: `./vanity -ARGS`, or , `./keyconv -ARGS`, etc  
-Running On Windows: `vanity.exe -ARGS`, `keyconv.exe -ARGS`, etc  
+Running On Linux: `./vanity -ARGS`,  etc  
+Running On Windows: `vanity.exe -ARGS`, etc  
   
 **For generating addresses using the CPU(slower) use: vanity !**  
 **For generating addresses using the GPU(faster) use: oclvanity !**  
