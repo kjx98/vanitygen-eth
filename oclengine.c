@@ -304,7 +304,7 @@ static cl_uint
 vg_ocl_device_getuint(cl_device_id did, cl_device_info param)
 {
 	cl_int ret;
-    cl_uint val;
+	cl_uint val;
 	size_t size_ret;
 	ret = clGetDeviceInfo(did, param, sizeof(val), &val, &size_ret);
 	if (ret != CL_SUCCESS) {
@@ -458,7 +458,7 @@ vg_ocl_get_quirks(vg_ocl_context_t *vocp)
 			dvn = vg_ocl_device_getstr(vocp->voc_ocldid,
 						   CL_DEVICE_NAME);
 			if (!strcmp(dvn, "Tahiti") || !strcmp(dvn, "Barts") ||
-                !strcmp(dvn, "Pitcairn"))
+					!strcmp(dvn, "Pitcairn"))
 				quirks &= ~VG_OCL_AMD_BFI_INT;
 			if (!strcmp(dvn, "ATI RV710")) {
 				quirks &= ~VG_OCL_OPTIMIZATIONS;
@@ -1260,6 +1260,9 @@ vg_ocl_get_bignum_tpa(BIGNUM *bn, const unsigned char *buf, int cell)
 
 struct ec_point_st {
 	const EC_METHOD *meth;
+#if OPENSSL_VERSION_NUMBER >= 0x0010101000
+	int	curve_name;
+#endif
 #if OPENSSL_VERSION_NUMBER >= 0x0010100000
 	BIGNUM *X;
 	BIGNUM *Y;

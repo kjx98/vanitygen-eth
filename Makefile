@@ -30,4 +30,4 @@ oclvanity: oclvanitygen.o oclengine.o pattern.o util.o sha3.o hex.o
 	$(CC) $^ -o $@ $(CFLAGS) $(LIBS) $(OPENCL_LIBS)
 
 clean:
-	rm -rf $(OBJS) $(PROGS) $(TESTS) bin obj *.oclbin *.exe *.dbg
+	rm -rf $(OBJS) $(PROGS) $(TESTS) bin obj *.o *.oclbin *.exe *.dbg

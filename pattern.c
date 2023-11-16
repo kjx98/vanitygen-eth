@@ -245,9 +245,9 @@ vg_exec_context_calc_address(vg_exec_context_t *vxcp)
 		EC_POINT_add(pgroup, pubkey, pubkey, vxcp->vxc_vc->vc_pubkey_base, vxcp->vxc_bnctx);
 	}
 	len = EC_POINT_point2oct(pgroup, pubkey, POINT_CONVERSION_UNCOMPRESSED,
-                        eckey_buf, sizeof(eckey_buf), vxcp->vxc_bnctx);
-    SHA3_256(hash1, eckey_buf+1, 64);
-    memcpy(vxcp->vxc_binres, hash1+12, 20);
+							eckey_buf, sizeof(eckey_buf), vxcp->vxc_bnctx);
+	SHA3_256(hash1, eckey_buf+1, 64);
+	memcpy(vxcp->vxc_binres, hash1+12, 20);
 	EC_POINT_free(pubkey);
 }
 
@@ -493,9 +493,9 @@ vg_output_match_console(vg_context_t *vcp, EC_KEY *pkey, const char *pattern)
 	}
 
 	assert(EC_KEY_check_key(pkey));
-    vg_encode_address(ppnt, EC_KEY_get0_group(pkey), addr_buf);
+	vg_encode_address(ppnt, EC_KEY_get0_group(pkey), addr_buf);
 
-    vg_encode_privkey(pkey, privkey_buf);
+	vg_encode_privkey(pkey, privkey_buf);
 
 	int tickerlength=0;
 	if (vcp->vc_csv) {
@@ -642,7 +642,7 @@ get_prefix_ranges(const uint8_t *pfx, BIGNUM **result)
 	int ret = -1;
 	size_t  bLen;
 	size_t  keylen;
-    uint8_t upbin[64], lowbin[64], binres[64];
+	uint8_t upbin[64], lowbin[64], binres[64];
 	BIGNUM *bnhigh = NULL, *bnlow = NULL, *bnhigh2 = NULL, *bnlow2 = NULL;
 
 	memset(lowbin, 0, sizeof(lowbin));
@@ -913,7 +913,7 @@ vg_prefix_context_next_difficulty(vg_prefix_context_t *vcpp,
 	char *dbuf;
 
 	BN_clear(bntmp);
-    BN_set_bit(bntmp, 160);
+	BN_set_bit(bntmp, 160);
 	BN_div(bntmp2, NULL, bntmp, vcpp->vcp_difficulty, bnctx);
 
 	dbuf = BN_bn2dec(bntmp2);
@@ -973,7 +973,7 @@ vg_prefix_context_add_patterns(vg_context_t *vcp,
 
 		if (vcp->vc_verbose > 1) {
 			BN_clear(bntmp2);
-            BN_set_bit(bntmp2, 160);
+			BN_set_bit(bntmp2, 160);
 			BN_div(bntmp3, NULL, bntmp2, bntmp, bnctx);
 
 			dbuf = BN_bn2dec(bntmp3);
@@ -1026,7 +1026,7 @@ vg_prefix_get_difficulty(const char *pattern)
 		free_ranges(ranges);
 
 		BN_clear(bntmp);
-        BN_set_bit(bntmp, 160);
+		BN_set_bit(bntmp, 160);
 		BN_div(result, NULL, bntmp, result, bnctx);
 
 		dbuf = BN_bn2dec(result);
@@ -1117,7 +1117,7 @@ vg_prefix_addr_sort(vg_context_t *vcp, void *buf)
 		/* Low */
 		nbytes = BN_bn2bin(vp->vp_low, bnbuf);
 		ncopy = ((nbytes >= 20) ? 20 : ((nbytes > 4) ? (nbytes - 4) : 0));
-        memset(cbuf, 0, 20);
+		memset(cbuf, 0, 20);
 		memcpy(cbuf + (20 - ncopy), bnbuf, ncopy);
 		cbuf += 20;
 
